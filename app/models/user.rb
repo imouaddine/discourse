@@ -94,7 +94,7 @@ class User < ActiveRecord::Base
   end
 
   def self.username_length
-    3..15
+    3..30
   end
 
   def self.username_available?(username)
