@@ -93,3 +93,6 @@ config/version.rb
 bundler_stubs/*
 
 vendor/bundle/*
+
+# Ignore application configuration
+/config/application.yml

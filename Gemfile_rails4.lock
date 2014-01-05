@@ -101,6 +101,9 @@ GEM
     fast_xs (0.8.0)
     fastimage (1.5.2)
     ffi (1.9.3)
+    figaro (0.7.0)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     flamegraph (0.0.5)
       fast_stack
     fog (1.18.0)
@@ -421,6 +424,7 @@ DEPENDENCIES
   fast_xor
   fast_xs
   fastimage
+  figaro
   flamegraph
   fog (= 1.18.0)
   handlebars-source (~> 1.1.2)

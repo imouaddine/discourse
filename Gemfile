@@ -155,6 +155,9 @@ group :test do
   gem 'minitest', require: false
 end
 
+gem "figaro"
+
+
 group :test, :development do
   gem 'mock_redis'
   gem 'listen', '0.7.3', require: false
