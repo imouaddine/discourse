@@ -6,7 +6,7 @@
 
     ga('create', '<%= SiteSetting.ga_tracking_code %>', '<%= SiteSetting.ga_domain_name.gsub(/^http(s)?:\/\//, '') %>');
     ga('send', 'pageview');
-    ga('set', 'Logged In', <%= !current_user %>);
+    ga('set', 'Anonymous', <%= !current_user %>);
 
 </script>
 
