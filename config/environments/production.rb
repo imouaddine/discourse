@@ -32,22 +32,18 @@ Discourse::Application.configure do
   # the I18n.default_locale when a translation can not be found)
   config.i18n.fallbacks = true
 
-  if GlobalSetting.smtp_address
-    settings = {
-      address:              GlobalSetting.smtp_address,
-      port:                 GlobalSetting.smtp_port,
-      domain:               GlobalSetting.smtp_domain,
-      user_name:            GlobalSetting.smtp_user_name,
-      password:             GlobalSetting.smtp_password,
-      authentication:       'plain',
-      enable_starttls_auto: GlobalSetting.smtp_enable_start_tls
-    }
-
-    config.action_mailer.smtp_settings = settings.reject{|x,y| y.nil?}
-  else
-    config.action_mailer.delivery_method = :sendmail
-    config.action_mailer.sendmail_settings = {arguments: '-i'}
-  end
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      address: 'smtp.mandrillapp.com',
+      port: 587,
+      user_name: ENV['MANDRILL_USERNAME'],
+      password: ENV['MANDRILL_APIKEY'],
+      domain: 'heroku.com',
+      authentication: :plain
+  }
+  config.action_mailer.default_url_options = {
+      :host => 'support.neptunethemes.com'
+  }
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
