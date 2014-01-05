@@ -150,6 +150,12 @@ group :assets do
   gem 'uglifier'
 end
 
+
+group :production do
+  gem 'newrelic_rpm'
+end
+
+
 group :test do
   gem 'fakeweb', '~> 1.3.0', require: false
   gem 'minitest', require: false
